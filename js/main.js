@@ -77,8 +77,16 @@
   if (typeof LEAKS !== "undefined") {
     if (leaksFigure) {
       leaksFigure.innerHTML =
-        '<img src="' + esc(LEAKS.image) + '" alt="' + esc(LEAKS.imageAlt || "") + '" loading="lazy">' +
-        "<figcaption>" + esc(LEAKS.imageAlt || "") + "</figcaption>";
+        '<div class="img-window">' +
+          '<div class="img-window-bar">' +
+            '<span class="img-dot" aria-hidden="true"></span>' +
+            '<span class="img-dot" aria-hidden="true"></span>' +
+            '<span class="img-dot" aria-hidden="true"></span>' +
+            '<span class="img-window-title">' + esc(LEAKS.title || "") + "</span>" +
+          "</div>" +
+          '<img src="' + esc(LEAKS.image) + '" alt="' + esc(LEAKS.imageAlt || "") + '" loading="lazy">' +
+        "</div>" +
+        (LEAKS.caption ? "<figcaption>" + esc(LEAKS.caption) + "</figcaption>" : "");
     }
     if (leaksIntro) {
       leaksIntro.innerHTML = esc(LEAKS.intro || "");
