@@ -55,15 +55,18 @@ const PRODUCTS = [
 
 /* ---------- Leaki (sekcja "Leaki") ----------
    - image   : ścieżka do zdjęcia pokazywanego obok listy (w folderze img/)
-   - imageAlt: tekst alternatywny zdjęcia
+   - title   : nazwa pliku widoczna w belce okna
+   - imageAlt: tekst alternatywny zdjęcia (dla czytników ekranu)
+   - caption : opis pod zdjęciem (krótki opis leaka)
    - intro   : krótki opis kategorii
    - items   : każdy leak to tytuł i opis
 */
 const LEAKS = {
   image: "img/boty.png",
-  imageAlt: "Podgląd: boty.png",
-  intro:
-    "tutaj możesz zobaczyć wszystkie moje leaki",
+  title: "boty.png",
+  imageAlt: "Zrzut ekranu maszynki do botowania",
+  intro: "tutaj możesz zobaczyć wszystkie moje leaki",
+  caption: "Maszynka do botowania słabych serwerów Minecraft.",
   items: [
     {
       title: "boty do serwerow minecraft ",
