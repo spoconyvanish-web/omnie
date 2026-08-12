@@ -27,7 +27,7 @@ const PRODUCTS = [
   {
     name: "utrudnianie sprawdzania ",
     tagline: "chcesz utrudnić administratorowi wykrycie twoich cheatow? zakup juz teraz na discordzie",
-    price: "10zl/3 invite",
+    price: "15zl/3 invite",
     status: "beta",
     statusTone: "beta",
     link: "https://discord.gg/QKw8bNQH8P",
