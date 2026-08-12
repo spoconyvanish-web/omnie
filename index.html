@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bewuka</title>
+  <meta name="description" content="bewuka">
+  <meta name="theme-color" content="#0a0a0f">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230a0a0f'/%3E%3Ccircle cx='32' cy='32' r='13' fill='%23b18aff'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <header class="navbar" id="navbar">
+    <div class="navbar-inner container">
+      <a href="#home" class="logo" aria-label="bewuka — start">
+        <span class="logo-dot" aria-hidden="true"></span>bewuka
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Nawigacja">
+        <a href="#home" class="nav-link" data-section="home">Start</a>
+        <a href="#about" class="nav-link" data-section="about">O mnie</a>
+        <a href="#products" class="nav-link" data-section="products">Produkty</a>
+        <a href="#leaks" class="nav-link" data-section="leaks">Leaki</a>
+        <a href="#contact" class="nav-link" data-section="contact">Kontakt</a>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Otwórz menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section id="home" class="section hero">
+      <div class="container">
+        <div class="hero-inner">
+          <p class="overline reveal">Cześć, jestem</p>
+          <h1 class="hero-title reveal">bewuka<span class="accent-dot">.</span></h1>
+          <p class="hero-text reveal">
+            robie projekty oczywiscie legitne tanie/czasami darmowe.
+            jestem bardziej software engineer i mam nadzieje ze mi to dobrze wychodzi:> 
+          </p>
+          <div class="hero-actions reveal">
+            <a class="btn btn-primary" href="https://discord.com/users/1406355912272248944" target="_blank" rel="noopener">
+              Discord
+              <span class="btn-arrow" aria-hidden="true">&nearr;</span>
+            </a>
+            <a class="btn btn-ghost" href="https://discord.gg/QKw8bNQH8P" target="_blank" rel="noopener">Sklep</a>
+            <a class="btn btn-ghost" href="https://guns.lol/panbulka" target="_blank" rel="noopener">guns.lol</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- O MNIE -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="overline">O mnie</p>
+          <h2>Co robię</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <p>
+              Cześć, jestem <strong>bewuka</strong>. Zajmuję się głównie programowaniem.
+              robie projekty po czym je sprzedaje mozesz je zobaczyć/kupić na moim discordzie!
+            </p>
+          </div>
+
+          <ul class="about-list reveal-group" id="projectList" aria-label="Zakres prac">
+            <!-- renderowane z js/data.js -->
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUKTY -->
+    <section id="products" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="overline">Produkty</p>
+          <h2>Co znajdziesz w sklepie</h2>
+          <p class="section-sub">To są moje produkty nie wszystkie sie tutaj znajdują ale możesz je zobaczyc na moim discordzie.</p>
+        </div>
+
+        <div class="products-grid reveal-group" id="productsGrid">
+          <!-- renderowane z js/data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- LEAKI -->
+    <section id="leaks" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="overline">Leaki</p>
+          <h2>Leaki</h2>
+          <p class="section-sub">leak maszynki do botowania .</p>
+        </div>
+
+        <div class="leaks-layout">
+          <figure class="card leaks-image reveal" id="leaksFigure">
+            <!-- renderowane z js/data.js -->
+          </figure>
+
+          <div class="leaks-content reveal">
+            <p class="leaks-intro">
+              jak narazie tylko ten leak.
+            </p>
+            <ul class="leaks-list reveal-group" id="leaksList">
+              <!-- renderowane z js/data.js -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="overline">Kontakt</p>
+          <h2>Znajdziesz mnie tutaj</h2>
+        </div>
+
+        <div class="socials-grid reveal-group" id="socialsGrid">
+          <!-- renderowane z js/data.js -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>&copy; <span id="year"></span> bewuka</span>
+      <span class="footer-links">
+        <a href="https://discord.gg/QKw8bNQH8P" target="_blank" rel="noopener">Sklep</a>
+        <a href="https://guns.lol/panbulka" target="_blank" rel="noopener">guns.lol</a>
+      </span>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
