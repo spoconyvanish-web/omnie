@@ -589,91 +589,58 @@ code {
   transform: translate(2px, -2px);
 }
 
-/* ---------- leaks ---------- */
-.leaks-layout {
+/* ---------- mody ---------- */
+.mods-grid {
   display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: clamp(20px, 3vw, 40px);
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
   align-items: start;
 }
 
-.leaks-image {
-  padding: 0;
-  overflow: hidden;
+.mod-card {
+  padding: 22px;
 }
 
-.img-window {
-  padding: 12px;
-  background: #14141e;
-  border-bottom: 1px solid var(--line);
-}
-
-.img-window-bar {
+.mod-toggle {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 0 2px 12px;
-}
-
-.img-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.16);
-}
-
-.img-window-title {
-  margin-left: 8px;
-  font-size: 12px;
-  letter-spacing: 0.02em;
-  color: var(--text-faint);
-}
-
-.leaks-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  filter: brightness(1.1);
-  transition: filter 0.4s var(--ease);
-}
-
-.leaks-image:hover img {
-  filter: brightness(1.22);
-}
-
-.leaks-image figcaption {
-  font-size: 13px;
-  color: var(--text-dim);
-  padding: 14px 18px;
-}
-
-.leaks-intro {
-  color: var(--text-dim);
-  margin-bottom: 20px;
-}
-
-.leaks-list {
-  display: grid;
+  justify-content: space-between;
   gap: 12px;
+  width: 100%;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin-bottom: 8px;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
 }
 
-.leak-item {
-  padding: 18px 20px;
-}
-
-.leak-item h3 {
-  font-size: 15px;
+.mod-toggle h3 {
+  font-size: 17px;
   font-weight: 600;
   color: #fff;
-  margin-bottom: 4px;
 }
 
-.leak-item p {
-  color: var(--text-dim);
-  font-size: 13.5px;
-  line-height: 1.55;
+.mod-chevron {
+  color: var(--accent);
+  transition: transform 0.25s var(--ease);
+}
+
+.mod-card.open .mod-chevron {
+  transform: rotate(180deg);
+}
+
+.mod-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.mod-options[hidden] {
+  display: none;
 }
 
 /* ---------- footer ---------- */
@@ -744,10 +711,6 @@ code {
 /* ---------- responsive ---------- */
 @media (max-width: 860px) {
   .about-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .leaks-layout {
     grid-template-columns: 1fr;
   }
 }
