@@ -43,6 +43,38 @@
     });
   }
 
+  /* ---------- renderowanie: mody ---------- */
+  const modsGrid = document.getElementById("modsGrid");
+  if (modsGrid && typeof MODS !== "undefined") {
+    MODS.forEach((m, i) => {
+      const article = document.createElement("article");
+      article.className = "card mod-card reveal";
+      const panelId = "modOptions" + i;
+      const opts = (m.options || []).map((o) =>
+        '<a class="btn btn-primary btn-sm" href="' + esc(o.link || "#") + '" target="_blank" rel="noopener">' +
+          esc(o.label) +
+          ' <span class="btn-arrow" aria-hidden="true">&nearr;</span>' +
+        "</a>"
+      ).join("");
+      article.innerHTML =
+        '<button type="button" class="mod-toggle" aria-expanded="false" aria-controls="' + panelId + '">' +
+          "<h3>" + esc(m.name) + "</h3>" +
+          '<span class="mod-chevron" aria-hidden="true">&darr;</span>' +
+        "</button>" +
+        (m.tagline ? '<p class="product-desc">' + esc(m.tagline) + "</p>" : "") +
+        '<div class="mod-options" id="' + panelId + '" hidden>' + opts + "</div>";
+      const toggle = article.querySelector(".mod-toggle");
+      const panel = article.querySelector(".mod-options");
+      toggle.addEventListener("click", () => {
+        const open = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", String(!open));
+        article.classList.toggle("open", !open);
+        panel.hidden = open;
+      });
+      modsGrid.appendChild(article);
+    });
+  }
+
   /* ---------- renderowanie: socials ---------- */
   const socialsGrid = document.getElementById("socialsGrid");
   if (socialsGrid && typeof SOCIALS !== "undefined") {
@@ -67,40 +99,6 @@
         "</span>";
       socialsGrid.appendChild(a);
     });
-  }
-
-  /* ---------- renderowanie: leaki ---------- */
-  const leaksFigure = document.getElementById("leaksFigure");
-  const leaksIntro = document.querySelector(".leaks-intro");
-  const leaksList = document.getElementById("leaksList");
-
-  if (typeof LEAKS !== "undefined") {
-    if (leaksFigure) {
-      leaksFigure.innerHTML =
-        '<div class="img-window">' +
-          '<div class="img-window-bar">' +
-            '<span class="img-dot" aria-hidden="true"></span>' +
-            '<span class="img-dot" aria-hidden="true"></span>' +
-            '<span class="img-dot" aria-hidden="true"></span>' +
-            '<span class="img-window-title">' + esc(LEAKS.title || "") + "</span>" +
-          "</div>" +
-          '<img src="' + esc(LEAKS.image) + '" alt="' + esc(LEAKS.imageAlt || "") + '" loading="lazy">' +
-        "</div>" +
-        (LEAKS.caption ? "<figcaption>" + esc(LEAKS.caption) + "</figcaption>" : "");
-    }
-    if (leaksIntro) {
-      leaksIntro.innerHTML = esc(LEAKS.intro || "");
-    }
-    if (leaksList && Array.isArray(LEAKS.items)) {
-      LEAKS.items.forEach((l) => {
-        const li = document.createElement("li");
-        li.className = "card leak-item reveal";
-        li.innerHTML =
-          "<h3>" + esc(l.title) + "</h3>" +
-          "<p>" + esc(l.desc) + "</p>";
-        leaksList.appendChild(li);
-      });
-    }
   }
 
   /* ---------- pomocniczy escape ---------- */
