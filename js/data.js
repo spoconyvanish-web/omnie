@@ -27,7 +27,7 @@ const PRODUCTS = [
   {
     name: "utrudnianie sprawdzania ",
     tagline: "chcesz utrudnić administratorowi wykrycie twoich cheatow? zakup juz teraz na discordzie",
-    price: "15zl/3 invite",
+    price: "10zl/3 invite",
     status: "beta",
     statusTone: "beta",
     link: "https://discord.gg/QKw8bNQH8P",
@@ -41,39 +41,24 @@ const PRODUCTS = [
     statusTone: "muted",
     link: "https://discord.gg/QKw8bNQH8P",
     linkLabel: "Zapytaj o szczegóły"
-  },
-  {
-  name: "botowanie serwerów",
-  tagline: "maszynka do botowania słabych serwerów typu aternos",
-  price: "20zl/3 invite",
-  status: "soon",
-  statusTone: "muted",
-  link: "https://discord.gg/QKw8bNQH8P",
-  linkLabel: "Zapytaj o szczegóły"
   }
 ];
 
-/* ---------- Leaki (sekcja "Leaki") ----------
-   - image   : ścieżka do zdjęcia pokazywanego obok listy (w folderze img/)
-   - title   : nazwa pliku widoczna w belce okna
-   - imageAlt: tekst alternatywny zdjęcia (dla czytników ekranu)
-   - caption : opis pod zdjęciem (krótki opis leaka)
-   - intro   : krótki opis kategorii
-   - items   : każdy leak to tytuł i opis
+/* ---------- Mody (sekcja "Mody") ----------
+   - name    : nazwa moda
+   - tagline : krótki opis
+   - options : lista wersji po kliknięciu na moda (label + link)
 */
-const LEAKS = {
-  image: "img/boty.png",
-  title: "boty.png",
-  imageAlt: "Zrzut ekranu maszynki do botowania",
-  intro: "tutaj możesz zobaczyć wszystkie moje leaki",
-  caption: "Maszynka do botowania słabych serwerów Minecraft.",
-  items: [
-    {
-      title: "boty do serwerow minecraft ",
-      desc: "chcesz być beta testerem? skonatkuj sie ze mną na discordzie!"
-    }
-  ]
-};
+const MODS = [
+  {
+    name: "winsense client",
+    tagline: "kliknij i wybierz wersję: inject albo loader.",
+    options: [
+      { label: "Wersja inject", link: "https://direct-link.net/10393174/vMsQCLwtwLOb" },
+      { label: "Wersja loader", link: "https://direct-link.net/10393174/nq7XgM40faGl" }
+    ]
+  }
+];
 
 /* ---------- Socials / Kontakt ----------
    - copy: jeśli podasz tekst w polu "copy", kliknięcie skopiuje go do schowka
